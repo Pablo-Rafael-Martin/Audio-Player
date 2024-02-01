@@ -1,0 +1,18 @@
+#Player{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#Player img{
+    width: 300px;
+}
+
+.audio-name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
