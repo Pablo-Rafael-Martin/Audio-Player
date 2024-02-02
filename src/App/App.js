@@ -11,6 +11,7 @@ import audio7 from '../assets/áudios/7.mp3';
 import audio8 from '../assets/áudios/8.mp3';
 import audio9 from '../assets/áudios/9.mp3';
 import audio10 from '../assets/áudios/10.mp3';
+import { useState, useRef, useEffect } from 'react'
 
 function App() {
   const promise = [
@@ -25,9 +26,33 @@ function App() {
     {capa: capa, title: "Capítulo 9", author: 'Machado de Assis', track: audio9},
     {capa: capa, title: "Capítulo 10", author: 'Machado de Assis', track: audio10},
   ];
+
+  const [indexFaixaAtual, setIndexFaixaAtual] = useState(0);
+
+  function proximaFaixa() {
+    setIndexFaixaAtual((index) => (index + 1) % promise.length);
+  }
+
+  function faixaAnterior() {
+    setIndexFaixaAtual((index) => (index - 1 + promise.length) % promise.length);
+  }
+
+  const faixaAtual = promise[indexFaixaAtual];
+
+
+
+
+
   return (
     <div id="App">
-      <Player capa={capa} title='Título da faixa' author='Autor da faixa' />
+      <Player 
+      capa={faixaAtual.capa} 
+      title={faixaAtual.title} 
+      author={faixaAtual.author} 
+      track={faixaAtual.track} 
+      proximaFaixa={proximaFaixa} 
+      faixaAnterior={faixaAnterior}
+      />
     </div>
   );
 }
