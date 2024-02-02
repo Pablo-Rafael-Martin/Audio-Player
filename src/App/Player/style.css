@@ -5,14 +5,46 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: #d6d6ea;
 }
 
 #Player img{
     width: 300px;
 }
 
-.audio-name{
+.container-audio-info{
+    margin-top: 32px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.container-audio-info span{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 24px;
+}
+
+
+/*Botões*/
+#container-botões{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#container-botões button{
+    background-color: inherit;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+#voltar-faixa, #próxima-faixa{
+    font-size: 3em;
+}
+
+#tocar-faixa{
+    font-size: 4em;
 }
